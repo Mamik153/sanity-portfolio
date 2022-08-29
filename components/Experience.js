@@ -28,10 +28,10 @@ const Experience = () => {
 
     
     return (
-        <div className="max-w-5xl min-h-screen mx-auto pt-40 lg:px-5">
-            <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10 px-5 lg:px-0">Where I have worked.</h2>
+        <div className="max-w-5xl min-h-screen sm:min-h-full mx-auto pt-40 lg:px-5">
+            <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10 px-5 sm:px-12 lg:px-0">Where I have worked.</h2>
             <div className="flex flex-col lg:flex-row vertical-tabs mt-5">
-                <div className="vertical-tabs--title flex flex-nowrap overflow-y-scroll pb-5 lg:pb-0 lg:overflow-y-hidden lg:flex-col px-5 lg:px-0">
+                <div className="vertical-tabs--title flex flex-nowrap overflow-y-scroll pb-5 sm:px-14 lg:pb-0 lg:overflow-y-hidden lg:flex-col px-5 lg:px-0">
                     {
                         experience?.map(header => (
                             <a key={header._id}  id={header._id} 
@@ -44,7 +44,7 @@ const Experience = () => {
                 </div>
                 {
                     experience?.map(data=> (
-                        <div key={data._id} data-content-for="exp" className={`vertical-tabs--content px-5 py-1 flex-1 space-y-5 ${activeID == data._id ? "" : "hidden"}`}>
+                        <div key={data._id} data-content-for="exp" className={`vertical-tabs--content px-5 sm:px-14 py-1 flex-1 space-y-5 ${activeID == data._id ? "" : "hidden"}`}>
                             <div>
                                 <h2 className="text-sky-300 text-xl font-bold">{data.position}</h2>
                                 <p className="text-sky-600 py-1 text-md font-medium">{data.from} - {data.to ? data.to : "present"}</p>

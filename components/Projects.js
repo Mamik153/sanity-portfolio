@@ -27,7 +27,7 @@ const Projects = () => {
     // })
     // console.log("sortedProjects", sortedProjects)
     return (
-    <div className="max-w-5xl min-h-screen mx-auto pt-40 px-5">
+    <div className="max-w-5xl min-h-screen mx-auto sm:pt-40 px-5 sm:px-14">
         <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10">Some Projects I built.</h2>
         <div className="flex flex-col space-y-20 py-5">
 

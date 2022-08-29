@@ -23,7 +23,7 @@ const Certifications = () => {
       }, [])
 
     return (
-    <div className="max-w-5xl min-h-screen mx-auto pt-40 px-5">
+    <div className="max-w-5xl min-h-screen sm:min-h-full mx-auto pt-40 px-5 sm:px-14">
         <h2 className="text-left text-sky-400 font-bold text-3xl pb-10">Some of my Certifications.</h2>
         <div className="flex flex-col justify-between divide-y divide-dashed divide-slate-500 bg-slate-800 p-5 rounded-3xl"> 
             {
