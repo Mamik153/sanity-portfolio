@@ -1,26 +1,7 @@
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
-import { useState, useEffect } from 'react';
-import { sanityClient, urlFor } from '../sanity'
+import { urlFor } from '../sanity'
 
-const Certifications = () => {
-    const [certificates, setCertificates] = useState([])
-
-    useEffect(() => {
-        sanityClient.fetch(`*[_type == 'certificate']{
-            _createdAt,
-            _id,
-            certificate_id,
-            certificate_link,
-            certificate_provider,
-            image,
-            issued,
-            name
-          }`).then(data => {
-          
-          setCertificates(data);
-          //console.log("certificates", certificates);
-        })
-      }, [])
+const Certifications = ({ certificates }) => {
 
     return (
     <div className="max-w-5xl min-h-screen sm:min-h-full mx-auto pt-40 px-5 sm:px-14">

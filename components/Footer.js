@@ -20,7 +20,7 @@ const Footer = () => {
     <div className='flex flex-col items-center justify-center py-12 bg-black px-10'>
         <div className='flex flex-col justify-center items-center'>
             <img src="Assets/logo.png" className='w-20 object-contain' />
-            <p className='text-white text-3xl font-bold'>Mamik Das</p>
+            <p className='text-white text-3xl font-bold portfolioName'>Mamik Das</p>
         </div>
         <div className='flex items-center space-x-5 py-10'>
             <a href='https://github.com/Mamik153' rel='noreferrer' target="_blank">

@@ -2,37 +2,23 @@ import { useState, useEffect } from 'react';
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 import { IconBrandGithub } from '@tabler/icons';
 import { sanityClient, urlFor } from '../sanity'
+import moment from 'moment';
 
-const Projects = () => {
-    const [projects, setProjects] = useState([])
-    let sortedProjects;
-    useEffect(() => {
-        sanityClient.fetch(`*[_type == 'dev_project']{
-            ...,
-            type[0]->{
-              type
-            },
-            technologies[]->{
-             title
-            }
-          }`).then(data => {
-            setProjects(data);
-            
-        })
-    }, [])
-
+const Projects = ({ projects }) => {
     
-    // sortedProjects = projects?.sort(function(x, y){
-    //     return x._createdAt - y._createdAt;
+    // projects?.map(item => {
+
+    //     console.log("moment()", moment(item._createdAt).format('h:mm:ss'))
     // })
-    // console.log("sortedProjects", sortedProjects)
+    let sortedprojects = projects?.sort((a, b) => a._createdAt.localeCompare(b._createdAt));
+
     return (
     <div className="max-w-5xl min-h-screen mx-auto sm:pt-40 px-5 sm:px-14">
         <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10">Some Projects I built.</h2>
         <div className="flex flex-col space-y-20 py-5">
 
             {
-                projects?.map((project, index) => {
+                sortedprojects?.map((project, index) => {
                     if(index == 0 || index % 2== 0){
                         return(
                             <div key={project._id} className="flex flex-col lg:flex-row items-center lg:space-x-5"> 
