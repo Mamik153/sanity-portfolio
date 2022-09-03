@@ -1,7 +1,6 @@
 import { useState, useEffect } from 'react';
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import { sanityClient, urlFor } from '../sanity'
-import Image from 'next/image';
 
 
 export default function About({ recentTechnologies, intro, displayPicture }){

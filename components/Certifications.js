@@ -23,7 +23,7 @@ const Certifications = ({ certificates }) => {
                                 </div>                 
                                 <div></div>
                                 {item.certificate_link !== "" && (
-                                    <a target="_blank" className="" href={item.certificate_link}>
+                                    <a target="_blank" rel="noreferrer" className="" href={item.certificate_link}>
                                      <ArrowTopRightOnSquareIcon className='w-5 h-5 text-slate-500 hover:text-white' />
                                 </a>
                                 )}

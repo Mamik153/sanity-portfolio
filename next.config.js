@@ -2,8 +2,9 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ['cdn.sanity.io']
-  }
+    loader: 'imgix',
+    path: 'cdn.sanity.io',
+  },
 }
 
 module.exports = nextConfig

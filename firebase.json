@@ -1,0 +1,11 @@
+{
+  "hosting": {
+    "site": "mamik-portfolio-next",
+    "public": "out",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}

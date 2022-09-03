@@ -50,14 +50,14 @@ const Projects = ({ projects }) => {
                                     <div className="flex items-center space-x-3 py-5  lg:justify-end">
                                         {
                                             project.repolink  && (
-                                                <a href={project.repolink } target="_blank" className='text-gray-300 hover:text-white'>
+                                                <a href={project.repolink } target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
                                                     <IconBrandGithub className='w-6 h-6' />
                                                 </a>
                                             )
                                         }
                                         {
                                             project.livelink  && (
-                                                <a href={project.livelink} target="_blank" className='text-gray-300 hover:text-white'>
+                                                <a href={project.livelink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
                                                     <ArrowTopRightOnSquareIcon className='w-6 h-6' />
                                                 </a>
                                             )
@@ -87,14 +87,14 @@ const Projects = ({ projects }) => {
                                     <div className="flex items-center space-x-3 py-5">
                                         {
                                             project.repolink  && (
-                                                <a href={project.repolink} target="_blank" className='text-gray-300 hover:text-white'>
+                                                <a href={project.repolink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
                                                     <IconBrandGithub className='w-6 h-6' />
                                                 </a>
                                             )
                                         }
                                         {
                                             project.livelink  && (
-                                                <a href={project.livelink} target="_blank" className='text-gray-300 hover:text-white'>
+                                                <a href={project.livelink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
                                                     <ArrowTopRightOnSquareIcon className='w-6 h-6' />
                                                 </a>
                                             )
