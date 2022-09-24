@@ -2,27 +2,15 @@ import { useState, useEffect } from 'react';
 import Typewriter from 'typewriter-effect';
 import { ArrowDownIcon } from '@heroicons/react/24/solid'
 import { sanityClient, urlFor } from '../sanity'
+import { motion } from "framer-motion"
 
 const Hero = () => {
-  const [loading, setLoading] = useState(false);
-
-  useEffect(() => {
-    sanityClient.fetch(`*[_type == 'about']{
-      about[0],
-      contact[]->{
-        icon,
-        link,
-        title
-      },
-      image,
-      technology[]->{
-        _id,
-        title
-      }
-    }[0]`).then(data => {
-      setLoading(true)
+  const handleScroll = () => {
+    window.scrollTo({
+      top: window.innerHeight+20,
+      behavior: 'smooth',
     })
-  }, [])
+  }
   return (
     <div className="hero min-h-screen relative px-5">       
         <div className="hero-content text-center text-neutral-content max-w-5xl">
@@ -30,7 +18,7 @@ const Hero = () => {
                 <p className="text-left mb-1 text-md font-light text-white">Hi, my name is</p>
                 <h1 className='text-5xl font-bold text-left  mb-2'>Mamik Das</h1>
                 <div className='text-5xl font-bold text-left text-sky-500'>
-                  {loading && <Typewriter
+                  {<Typewriter
                     options={{
                       loop: true,
                     }}
@@ -57,9 +45,15 @@ const Hero = () => {
                   />}
                 </div>
                 
-                <button className="absolute bottom-8 mt-10 btn btn-square bg-white animate-bounce rounded-full">
+                <motion.button 
+                  whileHover={{ scale: 1.1 }}
+                  whileTap={{ scale: 0.9 }}
+                  className="absolute bottom-12 mt-10 btn btn-square bg-white animate-bounce rounded-full" 
+                  style={{ left: '46%' }} 
+                  onClick={handleScroll}
+                >
                   <ArrowDownIcon className='h-6 w-6 text-sky-600' />
-                </button>
+                </motion.button>
             </div>
         </div>
     </div>

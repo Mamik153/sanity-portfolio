@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { ChevronRightIcon } from '@heroicons/react/24/solid'
 import { sanityClient, urlFor } from '../sanity'
-
+import { motion } from "framer-motion"
 
 export default function About({ recentTechnologies, intro, displayPicture }){
 
@@ -16,7 +16,7 @@ export default function About({ recentTechnologies, intro, displayPicture }){
               ))
             }
             <br /><br/>
-            Recent Technologies I have worked on:
+            Recent Technologies I am working with:
             <br/><br/>
             <div className="grid grid-cols-2">   
             {
@@ -32,7 +32,23 @@ export default function About({ recentTechnologies, intro, displayPicture }){
                                  
             </div>
           </div>
-          <img src={displayPicture} alt="" className="w-full lg:w-2/5 h-auto rounded-3xl object-cover" />
+          <motion.img 
+            initial={{
+              x:-100,
+              opacity: 0,
+              scale: 0.5
+            }}
+            whileInView={{
+              x:0,
+              opacity: 1,
+              scale:1
+            }}
+            viewport={{ once: true }}
+            loading='lazy'
+            src={displayPicture} 
+            alt="" 
+            className="w-full lg:w-2/5 h-auto rounded-3xl object-cover" 
+          />
           
         </div>
         

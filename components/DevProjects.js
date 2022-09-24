@@ -13,7 +13,7 @@ const Projects = ({ projects }) => {
     let sortedprojects = projects?.sort((a, b) => a._createdAt.localeCompare(b._createdAt));
 
     return (
-    <div className="max-w-5xl min-h-screen mx-auto sm:pt-40 px-5 sm:px-14">
+    <div className="max-w-5xl min-h-screen mx-auto pt-20 sm:pt-40 px-5 sm:px-14">
         <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10">Some Projects I built.</h2>
         <div className="flex flex-col space-y-20 py-5">
 
@@ -27,12 +27,12 @@ const Projects = ({ projects }) => {
                                     <div className="mockup-phone border-primary">
                                         <div className="camera"></div> 
                                         <div className="display">                                            
-                                            <img src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
+                                            <img loading='lazy' src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
                                         </div>
                                     </div>
                                 ):(
                                     <div className="mockup-window bg-sky-400 w-full lg:w-1/2">
-                                        <img src={urlFor(project.image).url()} loading="lazy" />
+                                        <img loading='lazy' src={urlFor(project.image).url()} />
                                     </div>
                                 )}
                                 
@@ -40,10 +40,10 @@ const Projects = ({ projects }) => {
                                     <p className="text-sky-400">Featured Project</p>
                                     <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
                                     <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
-                                    <div className="flex items-center space-x-5 text-sm font-extrabold text-slate-500 justify-start lg:justify-end">
+                                    <div className="flex items-center gap-2 flex-wrap text-sm font-bold text-white justify-start lg:justify-end">
                                         {
                                             project.technologies.map(tech => (
-                                                <p key={tech.title}>{tech.title}</p>
+                                                <p key={tech.title} className="bg-sky-800 px-3 py-1 rounded-3xl whitespace-nowrap">{tech.title}</p>
                                             ))
                                         }
                                     </div>
@@ -77,10 +77,10 @@ const Projects = ({ projects }) => {
                                     <p className="text-sky-400">Featured Project</p>
                                     <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
                                     <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
-                                    <div className="flex items-center space-x-5 text-sm font-extrabold text-slate-500 justify-start">
+                                    <div className="flex items-center gap-2 flex-wrap text-sm font-bold text-white justify-start">
                                         {
                                             project.technologies.map(tech => (
-                                                <p key={tech.title}>{tech.title}</p>
+                                                <p key={tech.title} className="bg-sky-800 px-3 py-1 rounded-3xl whitespace-nowrap">{tech.title}</p>
                                             ))
                                         }
                                     </div>
@@ -108,12 +108,12 @@ const Projects = ({ projects }) => {
                                     <div className="mockup-phone border-primary">
                                         <div className="camera"></div> 
                                         <div className="display">                                            
-                                            <img src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
+                                            <img loading='lazy' src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
                                         </div>
                                     </div>
                                 ):(
                                     <div className="mockup-window bg-sky-400 w-full lg:w-1/2">
-                                        <img src={urlFor(project.image).url()} loading="lazy" />
+                                        <img loading='lazy' src={urlFor(project.image).url()} />
                                     </div>
                                 )}
 

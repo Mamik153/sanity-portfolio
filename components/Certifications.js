@@ -11,7 +11,7 @@ const Certifications = ({ certificates }) => {
                 certificates?.map(item => {
                     return(
                         <div key={item._id} className="flex items-start space-x-5 py-3">
-                            <img src={urlFor(item.image).url()} className="w-16 object-contain aspect-square bg-white rounded-md p-1" loading='lazy' />
+                            <img loading='lazy' src={urlFor(item.image).url()} className="w-16 object-contain aspect-square bg-white rounded-md p-1" />
                             <div className='space-y-2'>
                                 <div>
                                     <h4 className='text=xl font-bold text-white'>{item.name}</h4>

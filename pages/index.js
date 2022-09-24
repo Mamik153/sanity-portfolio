@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 import Head from 'next/head'
 import Image from 'next/image'
@@ -9,36 +9,106 @@ import Navbar from '../components/Navbar'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Experience from '../components/Experience'
-import Projects from '../components/Projects'
+import DevProjects from '../components/DevProjects'
 import Certifications from '../components/Certifications'
 import Contact from '../components/Contact'
 import Footer from '../components/Footer'
 import { sanityClient, urlFor } from "../sanity"
+import UXProjects from '../components/UXProjects';
+import Skills from '../components/Skills';
 
 
-export default function Home({ about, certificates, experience, projects }) {
-  let recentTechnologies = about.technology;
-  let intro = about.about;
-  let displayPicture = urlFor(about.image).url();
-  let experiences = experience;
-  let featuredProjects = projects;
-  let certifications = certificates;
+export default function Home() {
 
-  //console.log("recentTechnologies, intro, displayPicture : ", recentTechnologies, intro, displayPicture)
+  const [displayPicture, setDisplayPicture] = useState('')
+  const [intro, setIntro] = useState([])
+  const [technologies, setTechnologies] = useState([]);  
+  const [featuredProjects, setfeaturedProjects] = useState([]); 
+  const [designProjects, setDesignProjects] = useState([]); 
+  const [certifications, setCertifications ] = useState([]); 
+  const [activeID, setActiveID] = useState('');
+  
+
+  useEffect(() => {
+    sanityClient.fetch(`*[_type == 'about']{
+      about[],
+      contact[]->{
+        icon,
+        link,
+        title
+      },
+      image,
+      technology[]->{
+        _id,
+        title
+      }
+    }[0]`).then(data => {
+      setIntro(data.about)
+      setDisplayPicture(urlFor(data.image).url())
+      setTechnologies(data.technology)
+    })
+  }, [])
+  
+  useEffect(() => {
+    sanityClient.fetch(`*[_type == 'dev_project']{
+      ...,
+      type[0]->{
+        type
+      },
+      technologies[]->{
+       title
+      }
+    }`).then(data => {
+      setfeaturedProjects(data);
+    })
+  }, [])
+
+  useEffect(() => {
+    sanityClient.fetch(`*[_type == 'ux_project']{
+      ...,
+      type[0]->{
+        type
+      },
+      technologies[]->{
+       title
+      }
+    }`).then(data => {
+      setDesignProjects(data);
+    })
+  }, [])
+
+
+  useEffect(() => {
+    sanityClient.fetch(`*[_type == 'certificate']{
+      _createdAt,
+      _id,
+      certificate_id,
+      certificate_link,
+      certificate_provider,
+      image,
+      issued,
+      name
+    }`).then(data => {
+      setCertifications(data);
+    })
+  }, [])
+
   return (
     <div>
       <Head>
         <title>Mamik Das</title>
         <meta name="description" content="Portfolio" />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/Assets/Logo.png" />
       </Head>
 
       <div className=''>
         <Navbar />
         <Hero />
-        <About intro={intro} displayPicture={displayPicture} recentTechnologies={recentTechnologies} />
-        <Experience experience={experiences} />
-        <Projects projects={featuredProjects} />
+        <About intro={intro} displayPicture={displayPicture} recentTechnologies={technologies} />
+        <Skills />
+        <Experience />        
+        <DevProjects projects={featuredProjects} />
+        <UXProjects projects={designProjects} />        
         <Certifications certificates={certifications} />
         <Contact />
         <Footer />
@@ -46,65 +116,4 @@ export default function Home({ about, certificates, experience, projects }) {
       
     </div>
   )
-}
-
-
-export async function getStaticProps(context) {
-  const aboutQuery = `*[_type == 'about']{
-    about[],
-    contact[]->{
-      icon,
-      link,
-      title
-    },
-    image,
-    technology[]->{
-      _id,
-      title
-    }
-  }[0]`;
-
-  const certificationQuery = `*[_type == 'certificate']{
-    _createdAt,
-    _id,
-    certificate_id,
-    certificate_link,
-    certificate_provider,
-    image,
-    issued,
-    name
-  }`
-
-  const experienceQuery = `*[_type == 'experience']{
-    _id,
-    name,
-    position,
-    from,
-    to,
-    responsibilities[]
-  }`
-
-  const projectsQuery = `*[_type == 'dev_project']{
-    ...,
-    type[0]->{
-      type
-    },
-    technologies[]->{
-     title
-    }
-  }`
-
-  const about = await sanityClient.fetch(aboutQuery);
-  const certificates = await sanityClient.fetch(certificationQuery);
-  const experience = await sanityClient.fetch(experienceQuery);
-  const projects = await sanityClient.fetch(projectsQuery);
-  return {
-    props: {
-      about,
-      certificates,
-      experience,
-      projects
-    },
-    revalidate: 10,
-  }
 }

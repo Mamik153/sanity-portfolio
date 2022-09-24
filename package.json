@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
+    "build": "next build",
     "start": "next start",
     "lint": "next lint"
   },
@@ -16,6 +16,7 @@
     "@tabler/icons": "^1.88.0",
     "daisyui": "^2.24.0",
     "firebase": "^9.9.4",
+    "framer-motion": "^7.3.5",
     "moment": "^2.29.4",
     "next": "12.2.5",
     "next-sanity": "^0.8.2",

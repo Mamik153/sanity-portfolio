@@ -1,0 +1,46 @@
+export async function getStaticProps(context) {
+
+
+
+  const certificationQuery = `*[_type == 'certificate']{
+    _createdAt,
+    _id,
+    certificate_id,
+    certificate_link,
+    certificate_provider,
+    image,
+    issued,
+    name
+  }`
+
+  const experienceQuery = `*[_type == 'experience']{
+    _id,
+    name,
+    position,
+    from,
+    to,
+    responsibilities[]
+  }`
+
+  const projectsQuery = `*[_type == 'dev_project']{
+    ...,
+    type[0]->{
+      type
+    },
+    technologies[]->{
+     title
+    }
+  }`
+
+  const certificates = await sanityClient.fetch(certificationQuery);
+  const experience = await sanityClient.fetch(experienceQuery);
+  const projects = await sanityClient.fetch(projectsQuery);
+  return {
+    props: {
+      certificates,
+      experience,
+      projects
+    },
+    revalidate: 60,
+  }
+}
