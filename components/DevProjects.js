@@ -3,6 +3,7 @@ import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 import { IconBrandGithub } from '@tabler/icons';
 import { sanityClient, urlFor } from '../sanity'
 import moment from 'moment';
+import { motion } from "framer-motion"
 
 const Projects = ({ projects }) => {
     
@@ -14,7 +15,21 @@ const Projects = ({ projects }) => {
 
     return (
     <div className="max-w-5xl min-h-screen mx-auto pt-20 sm:pt-40 px-5 sm:px-14">
-        <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10">Some Projects I built.</h2>
+        <motion.h2 
+            initial={{
+                x:100,
+                opacity: 0,
+                scale: 0.25
+            }}
+            whileInView={{
+                x:0,
+                opacity: 1,
+                scale:1
+            }}
+            transition={{ type: "tween" }}
+            viewport={{ once: false }}
+            className="text-left  text-sky-400 font-bold text-3xl pb-10"
+        >Some Projects I built.</motion.h2>
         <div className="flex flex-col space-y-20 py-5">
 
             {
@@ -24,19 +39,55 @@ const Projects = ({ projects }) => {
                             <div key={project._id} className="flex flex-col lg:flex-row items-center lg:space-x-5"> 
                                     
                                 {project.type.type == "Mobile App" ? (
-                                    <div className="mockup-phone border-primary">
+                                    <motion.div 
+                                        initial={{
+                                            x:-100,
+                                            y: 100,
+                                            opacity: 0,
+                                            scale: 0.25
+                                        }}
+                                        whileInView={{
+                                            x:0,
+                                            y: 0,
+                                            opacity: 1,
+                                            scale:1
+                                        }}                                       
+                                        className="mockup-phone border-primary">
                                         <div className="camera"></div> 
                                         <div className="display">                                            
                                             <img loading='lazy' src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 ):(
-                                    <div className="mockup-window bg-sky-400 w-full lg:w-1/2">
+                                    <motion.div 
+                                        initial={{
+                                            x:-100,
+                                            y: 100,
+                                            opacity: 0,
+                                            scale: 0.25
+                                        }}
+                                        whileInView={{
+                                            x:0,
+                                            y: 0,
+                                            opacity: 1,
+                                            scale:1
+                                        }}  
+                                        className="mockup-window bg-sky-400 w-full lg:w-1/2">
                                         <img loading='lazy' src={urlFor(project.image).url()} />
-                                    </div>
+                                    </motion.div>
                                 )}
                                 
-                                <div className="flex-1 text-center lg:text-right pt-5 lg:pt-0">
+                                <motion.div 
+                                    initial={{
+                                        opacity: 0,
+                                        scale: 0.15
+                                    }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        scale:1
+                                    }} 
+                                    transition={{ delay: 0.15 }}
+                                    className="flex-1 text-center lg:text-right pt-5 lg:pt-0">
                                     <p className="text-sky-400">Featured Project</p>
                                     <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
                                     <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
@@ -65,7 +116,7 @@ const Projects = ({ projects }) => {
                                         
                                     
                                     </div>
-                                </div>
+                                </motion.div>
                                 
                             </div>
                         )
@@ -73,7 +124,17 @@ const Projects = ({ projects }) => {
                         return(
                             <div  key={project._id} className="flex flex-col-reverse lg:flex-row items-center lg:space-x-5">
                     
-                                <div className="flex-1 text-center lg:text-left pt-5 lg:pt-0">
+                                <motion.div
+                                    initial={{
+                                        opacity: 0,
+                                        scale: 0.15
+                                    }}
+                                    whileInView={{
+                                        opacity: 1,
+                                        scale:1
+                                    }} 
+                                    transition={{ delay: 0.15 }}
+                                    className="flex-1 text-center lg:text-left pt-5 lg:pt-0">
                                     <p className="text-sky-400">Featured Project</p>
                                     <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
                                     <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
@@ -102,19 +163,45 @@ const Projects = ({ projects }) => {
                                         
 
                                     </div>
-                                </div>
+                                </motion.div>
 
                                 {project.type.type == "Mobile App" ? (
-                                    <div className="mockup-phone border-primary">
+                                    <motion.div 
+                                        initial={{
+                                            x:100,
+                                            y: -100,
+                                            opacity: 0,
+                                            scale: 0.25
+                                        }}
+                                        whileInView={{
+                                            x:0,
+                                            y: 0,
+                                            opacity: 1,
+                                            scale:1
+                                        }}  
+                                        className="mockup-phone border-primary">
                                         <div className="camera"></div> 
                                         <div className="display">                                            
                                             <img loading='lazy' src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
                                         </div>
-                                    </div>
+                                    </motion.div>
                                 ):(
-                                    <div className="mockup-window bg-sky-400 w-full lg:w-1/2">
+                                    <motion.div 
+                                        initial={{
+                                            x:100,
+                                            y: -100,
+                                            opacity: 0,
+                                            scale: 0.25
+                                        }}
+                                        whileInView={{
+                                            x:0,
+                                            y: 0,
+                                            opacity: 1,
+                                            scale:1
+                                        }} 
+                                        className="mockup-window bg-sky-400 w-full lg:w-1/2">
                                         <img loading='lazy' src={urlFor(project.image).url()} />
-                                    </div>
+                                    </motion.div>
                                 )}
 
                                 

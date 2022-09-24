@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { PlayIcon } from '@heroicons/react/24/solid'
 import { sanityClient, urlFor } from '../sanity'
+import { motion } from "framer-motion"
 
 const Experience = () => {
    
@@ -29,7 +30,23 @@ const Experience = () => {
             
             experience !== undefined && (
                 <div className="max-w-5xl h-full mx-auto pt-40 lg:px-5">
-                    <h2 className="text-left  text-sky-400 font-bold text-3xl pb-10 px-5 sm:px-12 lg:px-0">Where I have worked.</h2>
+                    <motion.h2 
+                        initial={{
+                            x:100,
+                            opacity: 0,
+                            scale: 0.25,
+                            
+                        }}
+                        whileInView={{
+                            x:0,
+                            opacity: 1,
+                            scale:1,
+                            animationDelay: 1000
+                        }}
+                        transition={{ type: "tween" }}
+                        viewport={{ once: false }}
+                        className="text-left  text-sky-400 font-bold text-3xl pb-10 px-5"
+                    >Where I have worked.</motion.h2>
                     <div className="flex flex-col lg:flex-row vertical-tabs mt-5">
                         <div className="vertical-tabs--title flex flex-nowrap overflow-x-scroll pb-5 sm:px-14 lg:pb-0 lg:overflow-x-hidden lg:flex-col px-5 lg:px-0">
                             {
@@ -44,7 +61,22 @@ const Experience = () => {
                         </div>
                         {
                             experience?.map(data=> (
-                                <div key={data._id} data-content-for="exp" className={`vertical-tabs--content px-5 sm:px-14 py-1 flex-1 space-y-5 ${selectedTab == data._id ? "" : "hidden"}`}>
+                                <motion.div 
+                                    key={data._id} data-content-for="exp" 
+                                    className={`vertical-tabs--content mx-5 sm:px-14 py-1 flex-1 space-y-5 ${selectedTab == data._id ? "" : "hidden"}`}
+                                    initial={{
+                                        y:50,
+                                        opacity: 0,
+                                        scale: 0.25,
+                                        
+                                    }}
+                                    whileInView={{
+                                        y:0,
+                                        opacity: 1,
+                                        scale:1
+                                    }}
+                                    viewport={{ once: false }}
+                                    >
                                     <div>
                                         <h2 className="text-sky-300 text-xl font-bold">{data.name}</h2>
                                         <p className="text-sky-600 py-1 text-md font-medium">{data.from} - {data.to ? data.to : "present"}</p>
@@ -58,7 +90,7 @@ const Experience = () => {
                                         }
                                         </ul>
                                     </div>            
-                                </div>
+                                </motion.div>
                             ))
                         }
                         
