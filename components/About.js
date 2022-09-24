@@ -58,7 +58,7 @@ export default function About({ recentTechnologies, intro, displayPicture }){
                     
                                  
             </div>
-          </motion.div>
+          </motion.div>          
           <motion.img 
             initial={{
               x:-100,
@@ -75,8 +75,7 @@ export default function About({ recentTechnologies, intro, displayPicture }){
             src={displayPicture} 
             alt="" 
             className="w-full lg:w-2/5 h-auto rounded-3xl object-cover" 
-          />
-          
+          />         
         </div>
         
     </div>

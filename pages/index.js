@@ -31,13 +31,19 @@ export default function Home() {
 
   useEffect(() => {
     sanityClient.fetch(`*[_type == 'about']{
+      name,
+      phonenumber,
+      email,
+      shortAddress,
+      longAddress,
+      image,
       about[],
       contact[]->{
         icon,
         link,
         title
       },
-      image,
+      
       technology[]->{
         _id,
         title

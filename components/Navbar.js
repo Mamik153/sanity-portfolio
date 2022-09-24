@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
+import { DocumentIcon } from '@heroicons/react/24/outline'
 
 const Navbar = () => {
     const [color, setColor] = useState('transparent');
@@ -11,6 +12,10 @@ const Navbar = () => {
             <img src="/Assets/Mamik.png" alt="MD" className="w-20 ml-2 p-2" />
             
             {/* <a className='ml-auto mr-3 text-white text-xs font-medium bg-slate-900 px-4 py-3 rounded-md' download={true} target="_blank" href='/Assets/CV.pdf'>Download CV</a> */}
+
+            {/* <a className='ml-auto mr-3 text-white text-sm font-semibold  rounded-md px-5'>
+              <DocumentIcon className='w-6 h-6 text-white mx-auto'  />
+            </a> */}
         </div>
         
         

@@ -32,7 +32,7 @@ const Skills = () => {
             viewport={{ once: false }}
             className="text-left  text-sky-400 font-bold text-3xl pb-10"
         >
-            My Skills.</motion.h2>
+            My Skillset.</motion.h2>
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4">
             {
                 
@@ -55,7 +55,7 @@ const Skills = () => {
                             key={item._id} 
                             src={urlFor(item.logo).url()} 
                             className='rounded-full' />
-                            <p className='text-sky-200 text-sm text-center font-bold mt-2 sm:hidden'>{item.title}</p>
+                            <p className='text-sky-200 text-sm text-center font-bold mt-2'>{item.title}</p>
                     </motion.div>
                     
                 ))

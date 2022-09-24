@@ -38,9 +38,9 @@ const Footer = () => {
         <div className='flex items-center space-x-5 py-10'>
             <motion.a 
                 initial={{
-                    y:100,
+                    y:50,
                     opacity: 0,
-                    scale: 2
+                    scale: 0
                 }}
                 whileInView={{
                     y:0,
@@ -56,9 +56,9 @@ const Footer = () => {
 
             <motion.a 
                 initial={{
-                    y:100,
+                    y:50,
                     opacity: 0,
-                    scale: 2
+                    scale: 0
                 }}
                 whileInView={{
                     y:0,
@@ -75,9 +75,9 @@ const Footer = () => {
 
             <motion.a 
                 initial={{
-                    y:100,
+                    y:50,
                     opacity: 0,
-                    scale: 2
+                    scale: 0
                 }}
                 whileInView={{
                     y:0,
@@ -94,9 +94,9 @@ const Footer = () => {
 
             <motion.a 
                 initial={{
-                    y:100,
+                    y:50,
                     opacity: 0,
-                    scale: 2
+                    scale: 0
                 }}
                 whileInView={{
                     y:0,
