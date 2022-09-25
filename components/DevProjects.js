@@ -73,7 +73,7 @@ const Projects = ({ projects }) => {
                                             scale:1
                                         }}  
                                         className="mockup-window bg-sky-400 w-full lg:w-1/2">
-                                        <img loading='lazy' src={urlFor(project.image).url()} />
+                                        <img loading='lazy' className='w-full' src={urlFor(project.image).url()} />
                                     </motion.div>
                                 )}
                                 
@@ -87,7 +87,7 @@ const Projects = ({ projects }) => {
                                         scale:1
                                     }} 
                                     transition={{ delay: 0.15 }}
-                                    className="flex-1 text-center lg:text-right pt-5 lg:pt-0">
+                                    className="flex-1 text-center lg:text-right pt-5 lg:pt-0 w-full">
                                     <p className="text-sky-400">Featured Project</p>
                                     <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
                                     <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
@@ -134,7 +134,7 @@ const Projects = ({ projects }) => {
                                         scale:1
                                     }} 
                                     transition={{ delay: 0.15 }}
-                                    className="flex-1 text-center lg:text-left pt-5 lg:pt-0">
+                                    className="flex-1 text-center lg:text-left pt-5 lg:pt-0 w-full">
                                     <p className="text-sky-400">Featured Project</p>
                                     <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
                                     <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
@@ -200,7 +200,7 @@ const Projects = ({ projects }) => {
                                             scale:1
                                         }} 
                                         className="mockup-window bg-sky-400 w-full lg:w-1/2">
-                                        <img loading='lazy' src={urlFor(project.image).url()} />
+                                        <img loading='lazy' className='w-full' src={urlFor(project.image).url()} />
                                     </motion.div>
                                 )}
 

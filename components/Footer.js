@@ -18,7 +18,7 @@ const Footer = () => {
 
     //console.log("SOCIAL", socials)
   return (
-    <div className='flex flex-col items-center justify-center py-12 bg-black px-10'>
+    <div className='flex flex-col items-center justify-center py-12 bg-black px-10 rounded-t-3xl'>
         <div className='flex flex-col justify-center items-center'>
             <motion.img 
                 initial={{

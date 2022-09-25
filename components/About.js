@@ -74,7 +74,7 @@ export default function About({ recentTechnologies, intro, displayPicture }){
             loading='lazy'
             src={displayPicture} 
             alt="" 
-            className="w-full lg:w-2/5 h-auto rounded-3xl object-cover" 
+            className="w-full sm:w-3/5 lg:w-2/5 h-auto rounded-3xl object-cover mx-auto" 
           />         
         </div>
         
