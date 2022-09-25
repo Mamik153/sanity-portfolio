@@ -8,10 +8,10 @@ const Skills = () => {
 
     useEffect(() => {
         sanityClient.fetch(`*[_type == 'skills']{
-            skills[]->{
+            technology[]->{
              ...
             }
-          }[0].skills`).then(data => {
+          }[0].technology`).then(data => {
             setSkills(data);    
         })
     }, [])
@@ -36,7 +36,7 @@ const Skills = () => {
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4">
             {
                 
-                skills?.map((item, index) => (
+                skills?.sort().map((item, index) => (
                     <motion.div
                         initial={{
                             y:-100,
