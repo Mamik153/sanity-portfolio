@@ -16,6 +16,7 @@ import Footer from '../components/Footer'
 import { sanityClient, urlFor } from "../sanity"
 import UXProjects from '../components/UXProjects';
 import Skills from '../components/Skills';
+import Hobbies from '../components/Hobbies';
 
 
 export default function Home() {
@@ -116,6 +117,7 @@ export default function Home() {
         <DevProjects projects={featuredProjects} />
         <UXProjects projects={designProjects} />        
         <Certifications certificates={certifications} />
+        <Hobbies />
         <Contact />
         <Footer />
       </div>
