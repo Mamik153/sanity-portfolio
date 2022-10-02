@@ -17,6 +17,7 @@ import { sanityClient, urlFor } from "../sanity"
 import UXProjects from '../components/UXProjects';
 import Skills from '../components/Skills';
 import Hobbies from '../components/Hobbies';
+import Education from '../components/Education';
 
 
 export default function Home() {
@@ -113,7 +114,8 @@ export default function Home() {
         <Hero />
         <About intro={intro} displayPicture={displayPicture} recentTechnologies={technologies} />
         <Skills />
-        <Experience />        
+        <Experience />    
+        <Education />    
         <DevProjects projects={featuredProjects} />
         <UXProjects projects={designProjects} />        
         <Certifications certificates={certifications} />

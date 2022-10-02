@@ -21,7 +21,7 @@ const Hobbies = () => {
             viewport={{ once: false }}
             className="text-left  text-sky-400 font-bold text-3xl pb-10"
         >
-            Hobbies.
+            Some of my Hobbies.
         </motion.h2>
         <div className="grid grid-cols-3 md:grid-cols-4  gap-4 justify-between bg-slate-800 p-5 rounded-3xl text-sky-400"> 
             <motion.div 
