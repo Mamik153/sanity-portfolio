@@ -5,7 +5,7 @@ import { sanityClient, urlFor } from '../sanity'
 import moment from 'moment';
 import { motion } from "framer-motion"
 
-const Projects = ({ projects }) => {
+const Projects = ({ theme, projects }) => {
     
     // projects?.map(item => {
 
@@ -28,7 +28,7 @@ const Projects = ({ projects }) => {
             }}
             transition={{ type: "tween" }}
             viewport={{ once: false }}
-            className="text-left  text-sky-400 font-bold text-3xl pb-10"
+            className={`text-left ${theme == 'default' ? 'text-sky-400 font-bold':`text-slate-900`}   text-4xl pb-10 flex items-start gap-1`}
         >Some Projects I built.</motion.h2>
         <div className="flex flex-col space-y-20 py-5">
 
@@ -52,7 +52,7 @@ const Projects = ({ projects }) => {
                                             opacity: 1,
                                             scale:1
                                         }}                                       
-                                        className="mockup-phone border-primary">
+                                        className="mockup-phone border-primary shadow-md">
                                         <div className="camera"></div> 
                                         <div className="display">                                            
                                             <img loading='lazy' src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
@@ -72,7 +72,7 @@ const Projects = ({ projects }) => {
                                             opacity: 1,
                                             scale:1
                                         }}  
-                                        className="mockup-window bg-sky-400 w-full lg:w-1/2">
+                                        className="mockup-window bg-sky-400 w-full lg:w-1/2 shadow-md">
                                         <img loading='lazy' className='w-full' src={urlFor(project.image).url()} />
                                     </motion.div>
                                 )}
@@ -88,27 +88,27 @@ const Projects = ({ projects }) => {
                                     }} 
                                     transition={{ delay: 0.15 }}
                                     className="flex-1 text-center lg:text-right pt-5 lg:pt-0 w-full">
-                                    <p className="text-sky-400">Featured Project</p>
-                                    <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
-                                    <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
-                                    <div className="flex items-center gap-2 flex-wrap text-sm font-bold text-white justify-start lg:justify-end">
+                                    <p className={`${theme == 'default' ? 'text-sky-400' : 'text-black'}`}>Featured Project</p>
+                                    <h3 className={`${theme == 'default' ? 'text-gray-300' : 'text-slate-900'}  text-2xl font-bold`}>{project.title}</h3>
+                                    <p className={`py-5 text-md  ${theme == 'default' ? 'text-emerald-300 font-semibold' : 'text-black'}`}>{project.short_description}</p>
+                                    <div className="flex items-center gap-2 flex-wrap text-sm  justify-start lg:justify-end">
                                         {
                                             project.technologies.map(tech => (
-                                                <p key={tech.title} className="bg-sky-800 px-3 py-1 rounded-3xl whitespace-nowrap">{tech.title}</p>
+                                                <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
                                             ))
                                         }
                                     </div>
                                     <div className="flex items-center space-x-3 py-5  lg:justify-end">
                                         {
                                             project.repolink  && (
-                                                <a href={project.repolink } target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
+                                                <a href={project.repolink } target="_blank" rel="noreferrer" className={`${theme == 'default' ? 'text-gray-300 hover:text-white ' : 'text-black hover:text-slate-700'}`}>
                                                     <IconBrandGithub className='w-6 h-6' />
                                                 </a>
                                             )
                                         }
                                         {
                                             project.livelink  && (
-                                                <a href={project.livelink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
+                                                <a href={project.livelink} target="_blank" rel="noreferrer" className={`${theme == 'default' ? 'text-gray-300 hover:text-white ' : 'text-black hover:text-slate-700'}`}>
                                                     <ArrowTopRightOnSquareIcon className='w-6 h-6' />
                                                 </a>
                                             )
@@ -135,27 +135,27 @@ const Projects = ({ projects }) => {
                                     }} 
                                     transition={{ delay: 0.15 }}
                                     className="flex-1 text-center lg:text-left pt-5 lg:pt-0 w-full">
-                                    <p className="text-sky-400">Featured Project</p>
-                                    <h3 className="text-gray-300 text-2xl font-bold">{project.title}</h3>
-                                    <p className="py-5 text-md font-semibold text-emerald-300">{project.short_description}</p>
-                                    <div className="flex items-center gap-2 flex-wrap text-sm font-bold text-white justify-start">
+                                    <p className={`${theme == 'default' ? 'text-sky-400' : 'text-black'}`}>Featured Project</p>
+                                    <h3 className={`${theme == 'default' ? 'text-gray-300' : 'text-slate-900'}  text-2xl font-bold`}>{project.title}</h3>
+                                    <p className={`py-5 text-md  ${theme == 'default' ? 'text-emerald-300 font-semibold' : 'text-black'}`}>{project.short_description}</p>
+                                    <div className="flex items-center gap-2 flex-wrap text-sm justify-start">
                                         {
                                             project.technologies.map(tech => (
-                                                <p key={tech.title} className="bg-sky-800 px-3 py-1 rounded-3xl whitespace-nowrap">{tech.title}</p>
+                                                <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
                                             ))
                                         }
                                     </div>
                                     <div className="flex items-center space-x-3 py-5">
                                         {
                                             project.repolink  && (
-                                                <a href={project.repolink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
+                                                <a href={project.repolink} target="_blank" rel="noreferrer" className={`${theme == 'default' ? 'text-gray-300 hover:text-white ' : 'text-black hover:text-slate-700'}`}>
                                                     <IconBrandGithub className='w-6 h-6' />
                                                 </a>
                                             )
                                         }
                                         {
                                             project.livelink  && (
-                                                <a href={project.livelink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
+                                                <a href={project.livelink} target="_blank" rel="noreferrer" className={`${theme == 'default' ? 'text-gray-300 hover:text-white ' : 'text-black hover:text-slate-700'}`}>
                                                     <ArrowTopRightOnSquareIcon className='w-6 h-6' />
                                                 </a>
                                             )
@@ -179,7 +179,7 @@ const Projects = ({ projects }) => {
                                             opacity: 1,
                                             scale:1
                                         }}  
-                                        className="mockup-phone border-primary">
+                                        className="mockup-phone border-primary shadow-md">
                                         <div className="camera"></div> 
                                         <div className="display">                                            
                                             <img loading='lazy' src={urlFor(project.image).url()} className="pt-2 bg-white w-60 lg:w-72" />
@@ -199,7 +199,7 @@ const Projects = ({ projects }) => {
                                             opacity: 1,
                                             scale:1
                                         }} 
-                                        className="mockup-window bg-sky-400 w-full lg:w-1/2">
+                                        className="mockup-window bg-sky-400 w-full lg:w-1/2 shadow-md">
                                         <img loading='lazy' className='w-full' src={urlFor(project.image).url()} />
                                     </motion.div>
                                 )}

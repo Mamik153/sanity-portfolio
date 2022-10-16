@@ -2,7 +2,7 @@ import {useState, useEffect} from 'react'
 import { sanityClient, urlFor } from "../sanity"
 import { motion } from "framer-motion"
 
-const Skills = () => {
+const Skills = ({ theme }) => {
     
     const [skills, setSkills] = useState([]);
 
@@ -30,7 +30,7 @@ const Skills = () => {
             }}
             transition={{ type: "tween" }}
             viewport={{ once: false }}
-            className="text-left  text-sky-400 font-bold text-3xl pb-10"
+            className={`text-left ${theme == 'default' ? 'text-sky-400 font-bold':`text-slate-900`}   text-4xl pb-10 flex items-center gap-10`}
         >
             My Skillset.</motion.h2>
         <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 gap-4">
@@ -55,7 +55,7 @@ const Skills = () => {
                             key={item._id} 
                             src={urlFor(item.logo).url()} 
                             className='rounded-full' />
-                            <p className='text-sky-200 text-sm text-center font-bold mt-2'>{item.title}</p>
+                            <p className={`${theme == 'default' ? 'text-sky-200' : 'text-black'}  text-sm text-center font-bold mt-2`}>{item.title}</p>
                     </motion.div>
                     
                 ))

@@ -2,7 +2,7 @@ import { sanityClient, urlFor } from '../sanity'
 import { ArrowTopRightOnSquareIcon } from '@heroicons/react/24/solid'
 import { motion } from "framer-motion"
 
-const UXProjects = ({ projects }) => {
+const UXProjects = ({ projects, theme }) => {
 
     let sortedprojects = projects?.sort((a, b) => -a._createdAt.localeCompare(b._createdAt));
     //console.log("sortedprojects", sortedprojects)
@@ -21,7 +21,7 @@ const UXProjects = ({ projects }) => {
             }}
             transition={{ type: "tween" }}
             viewport={{ once: false }}
-            className="text-left  text-sky-400 font-bold text-3xl pb-10"
+            className={`text-left ${theme == 'default' ? 'text-sky-400 font-bold':`text-slate-900`}   text-4xl pb-10 flex items-start gap-1`}
         >UI/UX Projects.</motion.h2>
         <div className="flex flex-col py-5 md:grid md:grid-cols-3 md:gap-4 md:justify-between space-y-5 md:space-y-0">
         {
@@ -41,7 +41,7 @@ const UXProjects = ({ projects }) => {
                             }}
                             viewport={{ once: false }}
                             src={urlFor(project.image).url()} 
-                            className="bg-white w-full sm:w-60 lg:w-72 aspect-square object-cover rounded-3xl" />
+                            className="bg-white w-full sm:w-60 lg:w-72 aspect-square object-cover rounded-3xl shadow-md" />
                         <motion.div 
                             initial={{
                                 x:-100,
@@ -56,18 +56,18 @@ const UXProjects = ({ projects }) => {
                             transition={{ delay: 0.15 }}
                             viewport={{ once: false }}
                             className='py-5 px-2'>
-                            <h3 className="text-gray-300 text-2xl md: text-md font-bold">{project.title}</h3>
-                            <p className="py-3 text-md font-semibold text-emerald-300">{project.short_description}</p>
+                            <h3 className={`${theme == 'default' ? 'text-gray-300' : 'text-slate-900'}  text-2xl font-bold`}>{project.title}</h3>
+                            <p className={`py-5 text-md  ${theme == 'default' ? ' font-semibold text-emerald-300' : 'text-black'}`}>{project.short_description}</p>
 
                             <div className="flex items-center space-x-5 text-sm font-bold text-white justify-start pb-4">
                             {
                                 project.technologies.map(tech => (
-                                    <p key={tech.title} className="bg-sky-800 px-3 py-1 rounded-3xl">{tech.title}</p>
+                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
                                 ))
                             }
                             </div>
 
-                            <a href={project.livelink} target="_blank" rel="noreferrer" className='text-gray-300 hover:text-white'>
+                            <a href={project.livelink} target="_blank" rel="noreferrer" className={`${theme == 'default' ? 'text-gray-300 hover:text-white ' : 'text-black hover:text-slate-700'}`}>
                             <ArrowTopRightOnSquareIcon className='w-6 h-6' />
                             </a>
                         </motion.div>    

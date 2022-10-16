@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@600&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -39,13 +41,76 @@
   background: lightcyan;
 }
 
-* {
+* body .metaTheme {
+  background-color: #FFF;
+  font-family: "Rubik", sans-serif;
+}
+* body .defaultTheme {
+  background-color: #0b192f;
   font-family: "Poppins", sans-serif;
 }
-* body {
-  background-color: #0b192f;
+
+.font-dancingScript {
+  font-family: "Dancing Script", sans-serif;
 }
 
-.portfolioName {
-  font-family: "Dancing Script", sans-serif;
+.font-quicksand {
+  font-family: "Quicksand", sans-serif;
+}
+
+.loading img {
+  -webkit-animation: breatheImg 1s ease-in;
+          animation: breatheImg 1s ease-in;
+}
+
+@-webkit-keyframes breathe {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes breathe {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes breatheImg {
+  0% {
+    width: 20px;
+  }
+  50% {
+    width: 130px;
+  }
+  70% {
+    width: 112px;
+  }
+  100% {
+    width: 115px;
+  }
+}
+@keyframes breatheImg {
+  0% {
+    width: 20px;
+  }
+  50% {
+    width: 130px;
+  }
+  70% {
+    width: 112px;
+  }
+  100% {
+    width: 115px;
+  }
 }/*# sourceMappingURL=globals.css.map */

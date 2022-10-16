@@ -3,7 +3,7 @@ import { sanityClient, urlFor } from '../sanity'
 import { IconBrandGithub, IconBrandCodepen, IconBrandBehance, IconBrandLinkedin  } from '@tabler/icons'
 import { motion } from "framer-motion"
 
-const Footer = () => {
+const Footer = ({ logo, theme }) => {
     const [socials, setSocials] = useState([])
     useEffect(() => {
         sanityClient.fetch(`*[_type == 'about']{
@@ -18,7 +18,7 @@ const Footer = () => {
 
     //console.log("SOCIAL", socials)
   return (
-    <div className='flex flex-col items-center justify-center py-12 bg-black px-10 rounded-t-3xl'>
+    <div className='flex flex-col items-center justify-center py-12 bg-black shadow-xl px-10 rounded-t-3xl'>
         <div className='flex flex-col justify-center items-center'>
             <motion.img 
                 initial={{
@@ -31,9 +31,9 @@ const Footer = () => {
                 }}
                 transition={{ type: 'just' }}
                 viewport={{ once: true }}
-                src="Assets/Logo.png" 
-                className='w-20 object-contain' />
-            <p className='text-white text-3xl font-bold portfolioName'>Mamik Das</p>
+                src={logo} 
+                className='w-24 h-24 object-contain bg-white rounded-full ' />
+            <p className={`text-3xl font-bold text-white  ${theme == 'default' ? 'font-dancingScript ' : 'font-quicksand'}`}>Mamik Das</p>
         </div>
         <div className='flex items-center space-x-5 py-10'>
             <motion.a 
