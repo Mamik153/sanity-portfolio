@@ -23,7 +23,7 @@ const Hobbies = ({ theme }) => {
         >
             Some of my Hobbies.
         </motion.h2>
-        <div className={`grid grid-cols-3 md:grid-cols-4  gap-4 justify-between  p-5 rounded-3xl text-sky-400 ${theme == 'default' ? 'bg-slate-800' : 'border border-solid border-sky-200'}`}> 
+        <div className={`grid grid-cols-3 md:grid-cols-4  gap-4 justify-between text-sky-400 ${theme == 'default' ? 'bg-slate-800 p-5 rounded-3xl' : ''}`}> 
             <motion.div 
                 initial={{
                     y:50,

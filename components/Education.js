@@ -42,7 +42,7 @@ const Education = ({ theme }) => {
             className={`text-left ${theme == 'default' ? 'text-sky-400 font-bold':`text-slate-900`}   text-4xl pb-10 flex items-start gap-1`}
         >
           {/* <IconCaretRight className='w-10 mt-2' style={{ color: '#1EFFFF' }} />  */} My Educational background.</motion.h2>
-        <div className={`flex flex-col  justify-between  px-5 rounded-3xl ${theme == 'default' ? 'bg-slate-800 divide-slate-500 divide-y divide-dashed ' : 'gap-2'}`}> 
+        <div className={`flex flex-col  justify-between ${theme == 'default' ? 'bg-slate-800 divide-slate-500 divide-y divide-dashed   px-5 rounded-3xl' : 'gap-2'}`}> 
 
         {
              education?.map(ed => (
