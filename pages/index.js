@@ -127,7 +127,7 @@ export default function Home() {
       <Head>
         <title>Mamik Das</title>
         <meta name="description" content="Portfolio" />
-        <link rel="icon" href="/Assets/Logo.png" />
+        <link rel="icon" href={logo} />
       </Head>
       {
         loading == false ? <div className=''>
