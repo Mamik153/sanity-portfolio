@@ -41,6 +41,10 @@
   background: lightcyan;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 * body .metaTheme {
   background-color: #FFF;
   font-family: "Rubik", sans-serif;
@@ -61,6 +65,8 @@
 .loading img {
   -webkit-animation: breatheImg 1s ease-in;
           animation: breatheImg 1s ease-in;
+  -webkit-animation-delay: 2;
+          animation-delay: 2;
 }
 
 @-webkit-keyframes breathe {

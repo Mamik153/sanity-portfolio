@@ -6,7 +6,7 @@ import { motion } from "framer-motion"
 export default function About({ theme, recentTechnologies, intro, displayPicture }){
 
   return (
-    <div className="max-w-5xl min-h-screen mx-auto pt-40 px-5 sm:px-14">
+    <div className="max-w-5xl min-h-screen mx-auto pt-40 px-5 sm:px-14" id='about'>
         <motion.h2 
             initial={{
                 x:100,

@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 
 const Hobbies = ({ theme }) => {
   return (
-    <div className='max-w-5xl h-full mx-auto pt-14 sm:pt-40 px-5 sm:px-14'>   
+    <div className='max-w-5xl h-full mx-auto pt-24 sm:pt-40 px-5 sm:px-14' id="hobbies">   
         <motion.h2 
             initial={{
                 x:100,
@@ -35,7 +35,7 @@ const Hobbies = ({ theme }) => {
                     opacity: 1,
                     scale:1
                 }}
-                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto'}`}>
+                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto py-3'}`}>
                 <IconDeviceGamepad2 className='w-8 md:w-12 h-8 md:h-12 mx-auto' />
                 <p className={`py-1 text-xs md:text-sm  text-center ${theme == 'default' ? 'text-white font-semibold' : 'text-black'}`}>Gaming</p>
             </motion.div>
@@ -51,7 +51,7 @@ const Hobbies = ({ theme }) => {
                     scale:1
                 }}
                 transition={{ delay: 0.15 }}
-                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto'}`}>
+                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto py-3'}`}>
                 <IconMusic className='w-8 md:w-12 h-8 md:h-12 mx-auto' />
                 <p className={`py-1 text-xs md:text-sm  text-center ${theme == 'default' ? 'text-white font-semibold' : 'text-black'}`}>Music</p>
             </motion.div>
@@ -67,7 +67,7 @@ const Hobbies = ({ theme }) => {
                     scale:1
                 }}
                 transition={{ delay: 0.20 }}
-                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto'}`}>
+                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto py-3'}`}>
                 <IconBeach className='w-8 md:w-12 h-8 md:h-12 mx-auto' />
                 <p className={`py-1 text-xs md:text-sm  text-center ${theme == 'default' ? 'text-white font-semibold' : 'text-black'}`}>Travelling</p>
             </motion.div>
@@ -83,7 +83,7 @@ const Hobbies = ({ theme }) => {
                     scale:1
                 }}
                 transition={{ delay: 0.25 }}
-                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto'}`}>
+                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto py-3'}`}>
                 <IconBarbell className='w-8 md:w-12 h-8 md:h-12 mx-auto' />
                 <p className={`py-1 text-xs md:text-sm  text-center ${theme == 'default' ? 'text-white font-semibold' : 'text-black'}`}>Gym</p>
             </motion.div>
@@ -99,7 +99,7 @@ const Hobbies = ({ theme }) => {
                     scale:1
                 }}
                 transition={{ delay: 0.30 }}
-                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto'}`}>
+                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto py-3'}`}>
                 <IconDeviceTv className='w-8 md:w-12 h-8 md:h-12 mx-auto' />
                 <p className={`py-1 text-xs md:text-sm  text-center ${theme == 'default' ? 'text-white font-semibold' : 'text-black'}`}>Anime</p>
             </motion.div>
@@ -115,7 +115,7 @@ const Hobbies = ({ theme }) => {
                     scale:1
                 }}
                 transition={{ delay: 0.35 }}
-                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto'}`}>
+                className={`${theme == 'default' ? 'w-full ' : 'border border-solid border-sky-300 shadow-md shadow-emerald-200 rounded-xl w-24 mx-auto p-3'}`}>
                 <IconPalette className='w-8 md:w-12 h-8 md:h-12 mx-auto' />
                 <p className={`py-1 text-xs md:text-sm  text-center ${theme == 'default' ? 'text-white font-semibold' : 'text-black'}`}>Painting</p>
             </motion.div>

@@ -14,7 +14,7 @@ const Projects = ({ theme, projects }) => {
     let sortedprojects = projects?.sort((a, b) => a._createdAt.localeCompare(b._createdAt));
 
     return (
-    <div className="max-w-5xl min-h-screen mx-auto pt-20 sm:pt-40 px-5 sm:px-14">
+    <div className="max-w-5xl min-h-screen mx-auto pt-20 sm:pt-40 px-5 sm:px-14" id="projects">
         <motion.h2 
             initial={{
                 x:100,

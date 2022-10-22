@@ -16,7 +16,7 @@ const Skills = ({ theme }) => {
         })
     }, [])
   return ( 
-    <div className='max-w-5xl h-full mx-auto pt-14 sm:pt-40 px-5 sm:px-14'>
+    <div className='max-w-5xl h-full mx-auto pt-20 sm:pt-40 px-5 sm:px-14' id='skills'>
         <motion.h2 
             initial={{
                 x:100,

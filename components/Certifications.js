@@ -5,7 +5,7 @@ import { motion } from "framer-motion"
 const Certifications = ({ certificates, theme }) => {
 
     return (
-    <div className="max-w-5xl min-h-screen sm:min-h-full mx-auto pt-40 px-5 sm:px-14">
+    <div className="max-w-5xl min-h-screen sm:min-h-full mx-auto pt-24 px-5 sm:px-14" id="certifications">
         <motion.h2 
             initial={{
                 x:100,
@@ -39,7 +39,7 @@ const Certifications = ({ certificates, theme }) => {
                                 }}
                                 loading='lazy' 
                                 src={urlFor(item.image).url()} 
-                                className={`w-16 object-contain aspect-square bg-white rounded-md p-1 ${theme == 'default' ? '' : 'border border-solid border-sky-300 shadow-md shadow-sky-200'}`} />
+                                className={`w-16 object-contain aspect-square bg-white rounded-md p-1 ${theme == 'default' ? '' : 'border border-solid border-sky-300'}`} />
                             <motion.div 
                                 initial={{                                    
                                     opacity: 0,

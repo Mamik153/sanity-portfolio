@@ -7,7 +7,9 @@
 @tailwind utilities;
 
 @import "./Hero.scss";
-
+html{
+    scroll-behavior:smooth
+}
 *{
     
 
@@ -35,6 +37,7 @@
     //animation: breathe 2s ease-in-out infinite;
     img{
         animation: breatheImg 1s ease-in;
+        animation-delay: 2;
     }
 }
 

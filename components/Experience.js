@@ -29,7 +29,7 @@ const Experience = ({ theme }) => {
         {
             
             experience !== undefined && (
-                <div className="max-w-5xl h-full mx-auto pt-40 lg:px-5">
+                <div className="max-w-5xl h-full mx-auto pt-40 lg:px-5"  id='experience'>
                     <motion.h2 
                         initial={{
                             x:100,

@@ -25,7 +25,7 @@ const Education = ({ theme }) => {
       education?.sort((a, b) => b.course_complete - a.course_complete)
     
   return (
-    <div className="max-w-5xl min-h-full mx-auto pt-24 md:pt-40 px-5 sm:px-14">
+    <div className="max-w-5xl min-h-full mx-auto pt-24 md:pt-40 px-5 sm:px-14" id='education'>
         <motion.h2 
             initial={{
                 x:100,

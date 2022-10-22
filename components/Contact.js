@@ -2,7 +2,7 @@ import { motion } from "framer-motion"
 
 const Contact = ({ theme }) => {
   return (
-    <div className="max-w-5xl h-full mx-auto py-40 flex flex-col items-center justify-center px-5 sm:px-14">
+    <div className="max-w-5xl h-full mx-auto py-40 flex flex-col items-center justify-center px-5 sm:px-14" id="contact">
         <motion.h2 
           initial={{
             y:100,
@@ -41,7 +41,7 @@ const Contact = ({ theme }) => {
           href="mailto:mamikdas153@gmail.com" 
           rel="noopener noreferrer" 
           target="_blank" 
-          className={`mt-4  ${theme == 'default' ? 'px-5 py-3 bg-sky-700 hover:bg-sky-800 active:bg-sky-900 text-white rounded-xl' : 'text-black rounded-3xl shadow-md shadow-sky-200 border border-solid border-sky-300 px-10 py-2'}`}
+          className={`mt-4 uppercase font-medium text-xs ${theme == 'default' ? 'px-5 py-3 bg-sky-700 hover:bg-sky-800 active:bg-sky-900 text-white rounded-xl' : 'text-black rounded-3xl shadow-sm shadow-emerald-200 border border-solid border-sky-300 px-10 py-3'}`}
         >Say Hello</motion.a>
     </div>
   )
