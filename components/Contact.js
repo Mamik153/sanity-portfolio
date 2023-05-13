@@ -4,18 +4,14 @@ import emailjs from '@emailjs/browser';
 
 const Contact = ({ theme }) => {
 
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
-  const [status, setStatus] = useState(null);
-
   const form = useRef();
 
   const sendEmail = (e) => {
-    console.log(e)
+    e.preventDefault()
     emailjs.sendForm(process.env.NEXT_PUBLIC_SERVICE_ID, process.env.NEXT_PUBLIC_TEMPLATE_ID, form.current, process.env.NEXT_PUBLIC_PUBLIC_KEY)
       .then((result) => {
           console.log(result.text);
+          form.current.reset();
       }, (error) => {
           console.log(error.text);
       });
