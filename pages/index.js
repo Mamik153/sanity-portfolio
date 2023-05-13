@@ -117,13 +117,13 @@ export default function Home() {
   }
 
   const handleThemeChange = (theme) => {
-    //console.log("CHANGE TO", theme)    
+    console.log("CHANGE TO", theme)    
     //location.reload()
     setTheme(theme);
   }
   
   return (
-    <div className={`${theme}Theme`}>
+    <div className={`${theme}Theme overflow-x-hidden`}>
       <Head>
         <title>Mamik Das</title>
         <meta name="description" content="Portfolio" />
@@ -136,6 +136,22 @@ export default function Home() {
           theme == 'default' ? (
             <div className="navbar fixed left-0 z-50 justify-center">
               <div className="navbar-start w-full p-2 xl:w-11/12 xl:m-2 mx-auto rounded-xl"  style={{ backgroundColor: `rgba(25, 31, 78, 0.9)` }}>
+              <div className="dropdown">
+                    <label tabIndex={0} className="btn btn-ghost border border-solid border-sky-200 p-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" className="inline-block w-5 h-5 stroke-current text-white"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </label>
+                    <ul tabIndex={0} className="menu menu-compact dropdown-content mt-3 p-2 shadow text-white rounded-box w-52 bg-blue-900">
+                    <li><a href='#hero'>Home</a></li>
+                      <li><a href='#about'>About</a></li>
+                      <li><a href="#skills">Skills</a></li>
+                      <li><a href="#experience">Experience</a></li>
+                      <li><a href="#education">Education</a></li>
+                      <li><a href="#projects">Projects</a></li>
+                      <li><a href="#certifications">Certifications</a></li>
+                      <li><a href="#hobbies">Hobbies</a></li>
+                      <li><a href='#contact'>Contact</a></li>
+                    </ul>
+                  </div>
                   <img src={logo} alt="MD" className="w-12 ml-2 px-2 bg-blue-200 rounded-full" />
                   
                   {/* <a className='ml-auto mr-3 text-white text-xs font-medium bg-slate-900 px-4 py-3 rounded-md' download={true} target="_blank" href='/Assets/CV.pdf'>Download CV</a> */}
@@ -144,10 +160,11 @@ export default function Home() {
                     <DocumentIcon className='w-6 h-6 text-white mx-auto'  />
                   </a> */}
                   <div className="dropdown dropdown-end ml-auto">
-                    <label tabIndex={0} className="btn m-1 shadow-sm"><SwatchIcon className='w-6 h-6' /></label>
+                    <label tabIndex={0} className="btn bg-blue-900 hover:bg-slate-900 m-1 shadow-sm"><SwatchIcon className='w-6 h-6' /></label>
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow-md rounded-box w-52 bg-slate-900">
-                      <li className='rounded-2xl'><a className='rounded-2xl text-xs bg-sky-400 font-medium'>Default</a></li>
+                      
                       <li><a className='text-xs text-white' onClick={() => handleThemeChange('meta')}>Meta</a></li>
+                      <li className='rounded-2xl'><a className='rounded-2xl text-xs bg-sky-400 font-medium'>Navy</a></li>
                     </ul>
                   </div>
               </div>     
@@ -174,7 +191,14 @@ export default function Home() {
                     </ul>
                   </div>
                   <img src={logo} alt="MD" className="w-10 ml-2" />
-
+                  <div className="dropdown dropdown-end ml-auto">
+                    <label tabIndex={0} className="btn bg-white hover:bg-slate-100 border-blue-300 m-1 shadow-sm"><SwatchIcon className='text-blue-600 w-6 h-6' /></label>
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow-md rounded-box w-52 bg-white border border-solid border-slate-300">
+                      <li><a className='rounded-2xl text-xs bg-sky-400 font-medium' >Meta</a></li>
+                      <li className='rounded-2xl'><a className='text-xs text-black' onClick={() => handleThemeChange('default')}>Navy</a></li>
+                     
+                    </ul>
+                  </div>
                 </div> 
               </div>
             </div>
