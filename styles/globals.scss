@@ -26,6 +26,29 @@ html{
     }
 }
 
+.clamped-text-1 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 1; /* Number of lines to display before truncating */
+}
+
+.clamped-text-2 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2; /* Number of lines to display before truncating */
+}
+.clamped-text-3 {
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 3; /* Number of lines to display before truncating */
+}
+
 .font-dancingScript{
     font-family: 'Dancing Script', sans-serif;
 

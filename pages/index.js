@@ -36,6 +36,8 @@ export default function Home() {
   
 
   useEffect(() => {
+    let isMounted = true;
+  
     sanityClient.fetch(`*[_type == 'about']{
       name,
       logo,
@@ -50,49 +52,71 @@ export default function Home() {
         link,
         title
       },
-      
       technology[]->{
         _id,
         title
       }
     }[0]`).then(data => {
-      setIntro(data.about)
-      setDisplayPicture(urlFor(data.image).url())
-      setLogo(urlFor(data.logo).url())
-      setTechnologies(data.technology)
-    })
-  }, [])
+      if (isMounted) {
+        setIntro(data.about);
+        setDisplayPicture(urlFor(data.image).url());
+        setLogo(urlFor(data.logo).url());
+        setTechnologies(data.technology);
+      }
+    });
+  
+    return () => {
+      isMounted = false;
+    };
+  }, []);
   
   useEffect(() => {
+    let isMounted = true;
+  
     sanityClient.fetch(`*[_type == 'dev_project']{
       ...,
       type[0]->{
         type
       },
       technologies[]->{
-       title
+        title
       }
     }`).then(data => {
-      setfeaturedProjects(data);
-    })
-  }, [])
-
+      if (isMounted) {
+        setfeaturedProjects(data);
+      }
+    });
+  
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+  
   useEffect(() => {
+    let isMounted = true;
+  
     sanityClient.fetch(`*[_type == 'ux_project']{
       ...,
       type[0]->{
         type
       },
       technologies[]->{
-       title
+        title
       }
     }`).then(data => {
-      setDesignProjects(data);
-    })
-  }, [])
-
-
+      if (isMounted) {
+        setDesignProjects(data);
+      }
+    });
+  
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+  
   useEffect(() => {
+    let isMounted = true;
+  
     sanityClient.fetch(`*[_type == 'certificate']{
       _createdAt,
       _id,
@@ -103,10 +127,16 @@ export default function Home() {
       issued,
       name
     }`).then(data => {
-      setCertifications(data);
-      
-    })
-  }, [])
+      if (isMounted) {
+        setCertifications(data);
+      }
+    });
+  
+    return () => {
+      isMounted = false;
+    };
+  }, []);
+  
 
   setTimeout(() => {
     setLoading(false)
@@ -121,6 +151,7 @@ export default function Home() {
     //location.reload()
     setTheme(theme);
   }
+
   
   return (
     <div className={`${theme}Theme overflow-x-hidden`}>
