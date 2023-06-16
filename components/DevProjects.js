@@ -109,12 +109,12 @@ const Projects = ({ theme, projects }) => {
                                         className="flex-1 text-center lg:text-right pt-5 lg:pt-0 w-full">
                                         
                                         <h3 className={`${theme == 'default' ? 'text-gray-300' : 'text-slate-900'}  text-2xl font-bold`}>{project.title}</h3>
-                                        <p className={`${theme == 'default' ? 'text-sky-400' : 'text-blue-900 bg-blue-100 w-max ml-auto px-3 py-1 rounded-xl text-xs mt-2'}`}>Featured Project</p>
+                                        <p className={`${theme == 'default' ? 'text-sky-400' : 'text-blue-900 bg-blue-100 w-max mx-auto sm:ml-auto sm:mr-0 px-3 py-1 rounded-xl text-xs mt-2 font-semibold'}`}>Featured Project</p>
                                         <p className={`py-5 text-md  ${theme == 'default' ? 'text-emerald-300 font-semibold' : 'text-black'}`}>{project.short_description}</p>
                                         <div className="flex items-center gap-2 flex-wrap text-sm  justify-start lg:justify-end">
                                             {
                                                 project.technologies.map(tech => (
-                                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
+                                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap text-xs ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
                                                 ))
                                             }
                                         </div>
@@ -157,12 +157,12 @@ const Projects = ({ theme, projects }) => {
                                         className="flex-1 text-center lg:text-left pt-5 lg:pt-0 w-full">
                                         
                                         <h3 className={`${theme == 'default' ? 'text-gray-300' : 'text-slate-900'}  text-2xl font-bold`}>{project.title}</h3>
-                                        <p className={`${theme == 'default' ? 'text-sky-400' : 'text-blue-900 bg-blue-100 w-max mr-auto px-3 py-1 rounded-xl text-xs mt-2'}`}>Featured Project</p>
+                                        <p className={`${theme == 'default' ? 'text-sky-400' : 'text-blue-900 bg-blue-100 w-max mx-auto sm:ml-0 sm:mr-auto px-3 py-1 rounded-xl text-xs mt-2 font-semibold'}`}>Featured Project</p>
                                         <p className={`py-5 text-md  ${theme == 'default' ? 'text-emerald-300 font-semibold' : 'text-black'}`}>{project.short_description}</p>
                                         <div className="flex items-center gap-2 flex-wrap text-sm justify-start">
                                             {
                                                 project.technologies.map(tech => (
-                                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
+                                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap text-xs ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
                                                 ))
                                             }
                                         </div>
@@ -296,7 +296,7 @@ const Projects = ({ theme, projects }) => {
                                             <div className="flex flex-wrap gap-2 items-center text-sm font-bold text-white justify-start pb-4">
                                             {
                                                 project.technologies.map(tech => (
-                                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
+                                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap text-xs ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
                                                 ))
                                             }
                                             </div>

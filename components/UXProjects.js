@@ -62,7 +62,7 @@ const UXProjects = ({ projects, theme }) => {
                             <div className="flex items-center space-x-5 text-sm font-bold text-white justify-start pb-4">
                             {
                                 project.technologies.map(tech => (
-                                    <p key={tech.title} className={`px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 text-black font-medium'}`}>{tech.title}</p>
+                                    <p key={tech.title} className={`text-xs px-3 py-1 rounded-3xl whitespace-nowrap ${theme == 'default' ? 'bg-sky-800 font-bold text-white' : 'border border-solid border-sky-200 shadow-sm shadow-sky-200 bg-emerald-100 text-emerald-700 font-medium'}`}>{tech.title}</p>
                                 ))
                             }
                             </div>

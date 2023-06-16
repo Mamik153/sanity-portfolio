@@ -222,14 +222,14 @@ export default function Home() {
                     </ul>
                   </div>
                   <img src={logo} alt="MD" className="w-10 ml-2" />
-                  <div className="dropdown dropdown-end ml-auto">
+                  {/* <div className="dropdown dropdown-end ml-auto">
                     <label tabIndex={0} className="btn bg-white hover:bg-slate-100 border-blue-300 m-1 shadow-sm"><SwatchIcon className='text-blue-600 w-6 h-6' /></label>
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow-md rounded-box w-52 bg-white border border-solid border-slate-300">
                       <li><a className='rounded-2xl text-xs bg-sky-400 font-medium' >Meta</a></li>
                       <li className='rounded-2xl'><a className='text-xs text-black' onClick={() => handleThemeChange('default')}>Navy</a></li>
                      
                     </ul>
-                  </div>
+                  </div> */}
                 </div> 
               </div>
             </div>
